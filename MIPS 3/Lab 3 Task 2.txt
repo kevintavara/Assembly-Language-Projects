@@ -1,0 +1,13 @@
+	last   first  second
+ Op     Rd/Rt    Rs     Rt
+addi    $t0,   $zero,    1 		1  0x00
+jal     Even                --loop	2  0x04
+beq     $s0,   $zero,   Odd		3  0x08
+add     $t0,    $t1,    $t0		4  0x0C
+j       loop				5  0x10
+andi    $s0,    $t0,     1  --Even	6  0x14
+slti    $s0,    $s0,    1		7  0x18
+jr      $ra				8  0x1C
+add     $t1,    $t0,    $t0 --Odd	9  0x20
+add     $t0,    $zero,  $t1		10 0x24
+j       loop				11 0x28
